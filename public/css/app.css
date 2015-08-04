@@ -6458,5 +6458,41 @@ button.close {
     display: none !important;
   }
 }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: table;
+  font-weight: 100;
+  font-family: 'Lato';
+}
+.header {
+  height: 50px;
+  background-color: #e1e1e1;
+  border-bottom: 1px dashed;
+}
+.header #logo {
+  margin: 0 15px;
+  font-size: 2em;
+  font-weight: bolder;
+  font-family: monospace;
+}
+.header #logo a {
+  text-decoration: none;
+}
+.header #logout {
+  margin: 12px;
+}
+#content #login_form,
+#content #register_form {
+  margin-top: 25%;
+  padding: 30px;
+  border: 1px dashed;
+  border-radius: 15px;
+}
 
 /*# sourceMappingURL=app.css.map */
