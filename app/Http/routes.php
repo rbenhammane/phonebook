@@ -24,6 +24,10 @@ Route::get('/', function () {
     return redirect()->route('phonenumber');
 });
 
+Route::get('/home', function () {
+    return redirect()->route('phonenumber');
+});
+
 Route::get('/phonenumber/create', ['middleware' => 'auth', 'uses' => 'PhoneNumberController@create']);
 
 Route::post('/phonenumber/create', ['middleware' => 'auth', 'uses' => 'PhoneNumberController@store']);
