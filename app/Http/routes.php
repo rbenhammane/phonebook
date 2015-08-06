@@ -20,10 +20,18 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-Route::get('/', ['middleware' => 'auth', function () {
-    return view('home');
-}]);
+Route::get('/', function () {
+    return redirect()->route('phonenumber');
+});
 
-Route::get('/home', ['middleware' => 'auth', function () {
-    return view('home');
-}]);
+Route::get('/phonenumber/create', ['middleware' => 'auth', 'uses' => 'PhoneNumberController@create']);
+
+Route::post('/phonenumber/create', ['middleware' => 'auth', 'uses' => 'PhoneNumberController@store']);
+
+Route::get('/phonenumber/edit/{id}', ['middleware' => 'auth', 'uses' => 'PhoneNumberController@edit']);
+
+Route::post('/phonenumber/edit/{id}', ['middleware' => 'auth', 'uses' => 'PhoneNumberController@update']);
+
+Route::post('/phonenumber/delete', ['middleware' => 'auth', 'uses' => 'PhoneNumberController@destroy']);
+
+Route::get('/phonenumber/{page?}', ['as' => 'phonenumber', 'middleware' => 'auth', 'uses' => 'PhoneNumberController@index']);
