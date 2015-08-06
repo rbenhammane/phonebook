@@ -3,7 +3,7 @@
 @section('title', 'Home Page')
 
 @section('content')
-@if ($perPage <= $total)
+@if ($perPage < $total)
 <div class="pull-right">
     <a href="{{ $page > 1 ? '/phonenumber/1' . (isset($search) ? '?search=' . $search : ' ') : 'javascript:void(0)' }}" class="btn btn-default btn-xs"><<</a>
     <a href="{{ $page > 1 ? '/phonenumber/' . ($page - 1) . (isset($search) ? '?search=' . $search : ' ') : 'javascript:void(0)' }}" class="btn btn-default btn-xs"><</a>
